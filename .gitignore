@@ -1,0 +1,12 @@
+src/logs/
+src/node_modules/
+npm-debug.log
+node_modules/
+coverage/
+.idea/
+src/run/
+.DS_Store
+*.swp
+.vscode
+db
+

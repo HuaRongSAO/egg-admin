@@ -1,0 +1,12 @@
+<html>
+    <h1>home 页面</h1>
+    <h2>{{ appName }}</h2>
+    <p>userToken:</p>
+    <p>{{ userToken }}</p>
+    <p>adminToken</p>
+    <p>{{ adminToken }}</p>
+    <p>state:{{ state }}</p>
+    <hr>
+    <hr>
+    <p>{{ arr }}</p>
+</html>

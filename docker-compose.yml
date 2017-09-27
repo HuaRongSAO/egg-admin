@@ -1,0 +1,36 @@
+webdev:
+  restart: always
+  image: node:8.5
+  links:
+    - redis
+    - mysql
+    - mongo
+redis:
+  restart: always
+  image: redis
+  ports:
+    - "6379:6379"
+  volumes:
+    - ./db/redis:/src
+  links:
+    - mysql:5.7
+mysql:
+  restart: always
+  image: mysql
+  ports:
+    - "3306:3306"
+  volumes:
+    - ./db/mysql:/docker-entrypoint-initdb.d
+    - ./db/mysqlData:/var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+
+mongo:
+    restart: always
+    image: mongo:3
+    ports:
+      - "27017:27017"
+    volumes:
+      - /db/mongo
+
+
